@@ -56,4 +56,56 @@ class student(person):
 
 # if a variable I need is external then I need to call it in as a parameter
 # if i'm using variables from within the class I always need to start the variable i'm calling upon with 'self.'
+#----------------------------------------------------------------------------------------------------------------
+import random
+import string
+characters=string.ascii_uppercase + string.digits
+#----------------------------------------------------------------------------------------------------------------
+class professor(person):
+    def __init__ (self, name, age, gender, staff_id, department, salary):
+        super().__init__(self, name, age, gender)
+        self.staff_id=staff_id
+        self.department=department
+        self.salary=salary
+    #def staff_id (self, characters):
+        #id=' '.join(random.choice(characters) for i in range 5)
+        #return(id)
+    
+    #def department (self):
+        #department_name=input("what department are you a part of? ('maths', 'computer science', 'physics', 'chemistry', 'biology' or 'psychology')") ")
+        #return (department_name)
+    
+    #def salary(self):
+        #salary=input("enter your yearly salary")
+        #return (salary)
+    
+    def change_professor_details(self, staff_id, department, salary):
+        self.staff_id=staff_id 
+        self.department=department
+        self.salary=salary
 
+    def give_feedback (self, student, feedback):
+        return ("feedback for " + [student.name] + ": Well done!")
+# when taking in the object 'student' it must be in square brackets
+
+    def increase_salary(self, percentage):
+        salary_increased= (self.salary*percentage)
+        return (salary_increased)
+    
+    def get_professor_summary (self):
+        return(" Name: " + self.name +
+               " Age: " + self.age +
+               " Gender: " + self.gender +
+               " Staff ID: " + self.staff_id +
+               " Department: " + self.department +
+               " Salary: " + self.salary)
+
+class administrator(person):
+    def __init__(self, name, age, gender, admin_id, office, years_of_service):
+        super().__init__(self, name, age, gender)
+        self.admin_id=admin_id
+        self.office=office
+        self.years_of_service=years_of_service
+
+    def change_admin_details(self,admin_id, office, years_of_service):
+        
